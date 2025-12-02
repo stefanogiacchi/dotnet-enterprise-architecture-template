@@ -11,9 +11,7 @@ Designed for API-centric systems, microservices, and cloud-native applications.
 
 ## 🔖 Status & Platform
 
-| Build | License | .NET |
-| :: | :--: | :--: |
-| ![Build](https://github.com/stefanogiacchi/dotnet-enterprise-architecture-template/actions/workflows/build-and-test.yml/badge.svg) | ![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg) | ![.NET 8](https://img.shields.io/badge/.NET-8.0-512BD4) |
+ ![Build](https://github.com/stefanogiacchi/dotnet-enterprise-architecture-template/actions/workflows/build-and-test.yml/badge.svg) | ![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg) | ![.NET 8](https://img.shields.io/badge/.NET-8.0-512BD4) |
 
  
 
