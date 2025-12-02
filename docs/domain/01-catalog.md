@@ -1,0 +1,1 @@
+descrizione entità Product, invariants, esempi JSON

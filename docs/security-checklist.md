@@ -1,0 +1,1 @@
+Lista di Controllo Sicurezza	Linee guida e controlli di sicurezza specifici per le API .NET (hardening, CORS, rate limiting).

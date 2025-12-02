@@ -1,0 +1,1 @@
+Glossario Termini	Definizioni chiare per Entity, Aggregate, Value Object, Command, Query per allineamento internazionale.

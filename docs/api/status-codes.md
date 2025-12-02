@@ -1,11 +1,4 @@
-Perfetto.
-Ecco **`docs/api/status-codes.md`**, scritto in stile **enterprise**, con una **matrice decisionale completa**, uguale a quella usata da Azure, Microsoft Graph, Stripe, AWS e GitHub.
-
-È uno dei file più importanti dell’intera documentazione.
-
----
-
-```markdown
+ 
 # HTTP Status Codes — Decision Matrix  
 .NET Enterprise Architecture Template
 
@@ -398,13 +391,4 @@ This ensures:
 
 ```
 
----
-
-Vuoi ora:
-
-### ✔ `docs/api/headers.md` — correlation-id, idempotency-key, caching, rate-limits  
-### ✔ `docs/api/resource-naming.md`  
-### ✔ `docs/api/examples.md` (full request/response examples per pattern)  
-
-Quale generiamo?
-```
+ 

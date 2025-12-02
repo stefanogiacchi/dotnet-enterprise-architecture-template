@@ -1,0 +1,1 @@
+Architectural Decision Record (ADR)  Documenta la giustificazione della scelta di pattern chiave (es. CQRS, Clean Architecture).
