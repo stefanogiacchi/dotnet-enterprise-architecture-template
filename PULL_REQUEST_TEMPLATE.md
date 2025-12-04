@@ -1,10 +1,4 @@
- 
 
-
-
-# ✅ **PULL_REQUEST_TEMPLATE.md**
-
-```md
 # 🚀 Pull Request — .NET Enterprise Architecture Template
 
 Thank you for contributing!  
