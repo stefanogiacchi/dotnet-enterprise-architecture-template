@@ -1,0 +1,16 @@
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Infrastructure\bin\Debug\net8.0\ArcAI.Infrastructure.deps.json
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Infrastructure\bin\Debug\net8.0\ArcAI.Infrastructure.dll
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Infrastructure\bin\Debug\net8.0\ArcAI.Infrastructure.pdb
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Infrastructure\bin\Debug\net8.0\ArcAI.Domain.dll
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Infrastructure\bin\Debug\net8.0\ArcAI.Domain.pdb
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Infrastructure\obj\Debug\net8.0\ArcAI.Infrastructure.csproj.AssemblyReference.cache
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Infrastructure\obj\Debug\net8.0\ArcAI.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Infrastructure\obj\Debug\net8.0\ArcAI.Infrastructure.AssemblyInfoInputs.cache
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Infrastructure\obj\Debug\net8.0\ArcAI.Infrastructure.AssemblyInfo.cs
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Infrastructure\obj\Debug\net8.0\ArcAI.Infrastructure.csproj.CoreCompileInputs.cache
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Infrastructure\obj\Debug\net8.0\ArcAI.Infrastructure.sourcelink.json
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Infrastructure\obj\Debug\net8.0\ArcAI.In.67BB2C93.Up2Date
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Infrastructure\obj\Debug\net8.0\ArcAI.Infrastructure.dll
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Infrastructure\obj\Debug\net8.0\refint\ArcAI.Infrastructure.dll
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Infrastructure\obj\Debug\net8.0\ArcAI.Infrastructure.pdb
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Infrastructure\obj\Debug\net8.0\ref\ArcAI.Infrastructure.dll

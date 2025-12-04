@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "5XPKA9GYJ6oE5X0gdSoVCawL9wO5mAclJDSujOEeQ2s=",
+  "Source": "ArcAI.Api",
+  "BasePath": "_content/ArcAI.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
