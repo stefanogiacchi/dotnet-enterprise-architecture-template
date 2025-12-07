@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ArcAI.Application.Common.Interfaces
+namespace ArcAI.Infrastructure.AI
 {
-    internal class FileName
+    internal class AzureOpenAiClient
     {
     }
 }

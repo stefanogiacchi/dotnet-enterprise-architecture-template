@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ArcAI.Application.Common.Models
+namespace ArcAI.Application.DTOs
 {
     internal class FileName
     {

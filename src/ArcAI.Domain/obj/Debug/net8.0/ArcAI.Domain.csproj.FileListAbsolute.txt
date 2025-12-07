@@ -3,3 +3,4 @@ D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Domain\obj\Debug\net8.0
 D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Domain\obj\Debug\net8.0\ArcAI.Domain.AssemblyInfo.cs
 D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Domain\obj\Debug\net8.0\ArcAI.Domain.csproj.CoreCompileInputs.cache
 D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Domain\obj\Debug\net8.0\ArcAI.Domain.sourcelink.json
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Domain\obj\Debug\net8.0\ArcAI.Domain.csproj.AssemblyReference.cache
