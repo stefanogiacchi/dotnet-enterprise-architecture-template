@@ -1,6 +1,7 @@
-# **.NET Enterprise Architecture Template (AI-Ready)**
+# ArcAI Framework — .NET Enterprise Architecture Template (AI-Ready)
 
-### *A modern cloud-native, enterprise-grade, AI-first architecture template for real-world systems.*
+
+### *Created and maintained by **Stefano Giacchi** — Cloud Architect & Enterprise Architect (track)*
 
 ---
 
@@ -156,6 +157,13 @@ thanks to its clear structure and enterprise-oriented design.
 Its AI-first approach and architectural consistency make it a valuable reference for teams working on modern cloud-native applications.
 
 ---
+## ArcAI Framework — Solution Layout
+
+- `ArcAI.Framework.sln`
+  - `ArcAI.Api` — HTTP/API boundary, contracts, authentication, API governance
+  - `ArcAI.Application` — use cases, CQRS, orchestrazione, pipeline, validation
+  - `ArcAI.Domain` — entità, value objects, aggregati, domain events
+  - `ArcAI.Infrastructure` — persistence, integration, messaging, AI connectors
 
 ## About the Author
 
