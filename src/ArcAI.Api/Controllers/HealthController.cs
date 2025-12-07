@@ -7,5 +7,7 @@ namespace ArcAI.Api.Controllers
     [ApiController]
     public class HealthController : ControllerBase
     {
+
+        //TODO GET /health o /ping per liveness
     }
 }
