@@ -1,0 +1,6 @@
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Application\obj\Debug\net8.0\ArcAI.Application.csproj.AssemblyReference.cache
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Application\obj\Debug\net8.0\ArcAI.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Application\obj\Debug\net8.0\ArcAI.Application.AssemblyInfoInputs.cache
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Application\obj\Debug\net8.0\ArcAI.Application.AssemblyInfo.cs
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Application\obj\Debug\net8.0\ArcAI.Application.csproj.CoreCompileInputs.cache
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Application\obj\Debug\net8.0\ArcAI.Application.sourcelink.json

@@ -25,4 +25,9 @@
     <ProjectReference Include="..\ArcAI.Infrastructure\ArcAI.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Middleware\" />
+    <Folder Include="Contracts\" />
+  </ItemGroup>
+
 </Project>
