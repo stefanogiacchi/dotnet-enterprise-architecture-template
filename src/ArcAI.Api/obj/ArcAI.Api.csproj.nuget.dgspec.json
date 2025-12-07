@@ -65,29 +65,25 @@
               "target": "Package",
               "version": "[8.1.0, )"
             },
-            "MediatR": {
-              "target": "Package",
-              "version": "[14.0.0, )"
-            },
-            "MediatR.Extensions.Microsoft.DependencyInjection": {
-              "target": "Package",
-              "version": "[11.1.0, )"
-            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[8.0.17, )"
+              "version": "[8.0.8, )"
             },
             "Serilog.AspNetCore": {
               "target": "Package",
-              "version": "[10.0.0, )"
+              "version": "[8.0.2, )"
+            },
+            "Serilog.Enrichers.Environment": {
+              "target": "Package",
+              "version": "[3.0.1, )"
             },
             "Serilog.Sinks.Console": {
               "target": "Package",
-              "version": "[6.1.1, )"
+              "version": "[6.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.6.2, )"
+              "version": "[6.7.3, )"
             }
           },
           "imports": [
@@ -163,13 +159,25 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.9.2, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.9.2, )"
+            },
             "MediatR": {
               "target": "Package",
-              "version": "[14.0.0, )"
+              "version": "[12.4.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.1, )"
             },
             "Microsoft.Extensions.Logging.Abstractions": {
               "target": "Package",
-              "version": "[10.0.0, )"
+              "version": "[8.0.1, )"
             }
           },
           "imports": [
@@ -285,6 +293,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "D:\\src\\dotnet-enterprise-architecture-template\\src\\ArcAI.Application\\ArcAI.Application.csproj": {
+                "projectPath": "D:\\src\\dotnet-enterprise-architecture-template\\src\\ArcAI.Application\\ArcAI.Application.csproj"
+              },
               "D:\\src\\dotnet-enterprise-architecture-template\\src\\ArcAI.Domain\\ArcAI.Domain.csproj": {
                 "projectPath": "D:\\src\\dotnet-enterprise-architecture-template\\src\\ArcAI.Domain\\ArcAI.Domain.csproj"
               }
@@ -306,6 +317,32 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.35, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

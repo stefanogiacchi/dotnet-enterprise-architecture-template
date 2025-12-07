@@ -1,5 +1,13 @@
-using System.Net;
 using Asp.Versioning;
+using ArcAI.Api.Contracts;
+using ArcAI.Application.Commands.Products.CreateProduct;
+using ArcAI.Application.Commands.Products.DeleteProduct;
+using ArcAI.Application.Commands.Products.UpdateProduct;
+using ArcAI.Application.DTOs;
+using ArcAI.Application.Queries.Products.GetProductById;
+using ArcAI.Application.Queries.Products.SearchProducts;
+using ArcAI.Domain.Enums;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,28 +22,68 @@ namespace ArcAI.Api.Controllers;
 [Produces("application/json")]
 public class ProductsController : ControllerBase
 {
-    [HttpGet]
-    [ProducesResponseType(typeof(IReadOnlyList<ProductResponse>), StatusCodes.Status200OK)]
-    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<IReadOnlyList<ProductResponse>>> GetProducts(
-        CancellationToken cancellationToken)
-    {
-        var items = await Task.FromResult(new List<ProductResponse>
-        {
-            new ProductResponse
-            {
-                Id = Guid.NewGuid(),
-                Sku = "SKU-EXAMPLE",
-                Name = "Sample product",
-                Description = "Sample description",
-                Price = 99.90m,
-                IsActive = true
-            }
-        } as IReadOnlyList<ProductResponse>);
+    private readonly IMediator _mediator;
 
-        return Ok(items);
+    public ProductsController(IMediator mediator)
+    {
+        _mediator = mediator;
     }
 
+    /// <summary>
+    /// Search products with pagination and filtering.
+    /// </summary>
+    /// <param name="request">Search parameters.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>A paginated list of products.</returns>
+    [HttpGet]
+    [ProducesResponseType(typeof(PaginatedResponse<ProductResponse>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<PaginatedResponse<ProductResponse>>> SearchProducts(
+        [FromQuery] SearchProductsRequest request,
+        CancellationToken cancellationToken)
+    {
+        // Parse status if provided
+        ProductStatus? status = null;
+        if (!string.IsNullOrWhiteSpace(request.Status) &&
+            Enum.TryParse<ProductStatus>(request.Status, true, out var parsedStatus))
+        {
+            status = parsedStatus;
+        }
+
+        var query = new SearchProductsQuery
+        {
+            SearchTerm = request.SearchTerm,
+            Status = status,
+            CategoryId = request.CategoryId,
+            MinPrice = request.MinPrice,
+            MaxPrice = request.MaxPrice,
+            PageNumber = request.PageNumber,
+            PageSize = request.PageSize
+        };
+
+        var result = await _mediator.Send(query, cancellationToken);
+
+        var response = new PaginatedResponse<ProductResponse>
+        {
+            Items = result.Items.Select(MapToResponse).ToList(),
+            PageNumber = result.PageNumber,
+            PageSize = result.PageSize,
+            TotalCount = result.TotalCount,
+            TotalPages = result.TotalPages,
+            HasPreviousPage = result.HasPreviousPage,
+            HasNextPage = result.HasNextPage
+        };
+
+        return Ok(response);
+    }
+
+    /// <summary>
+    /// Get a product by its identifier.
+    /// </summary>
+    /// <param name="id">The product identifier.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The product if found.</returns>
     [HttpGet("{id:guid}")]
     [ProducesResponseType(typeof(ProductResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
@@ -44,82 +92,126 @@ public class ProductsController : ControllerBase
         [FromRoute] Guid id,
         CancellationToken cancellationToken)
     {
-        var product = await Task.FromResult<ProductResponse?>(null);
+        var query = new GetProductByIdQuery { Id = id };
+        var product = await _mediator.Send(query, cancellationToken);
 
         if (product is null)
         {
-            var problem = new ProblemDetails
+            return NotFound(new ProblemDetails
             {
                 Status = StatusCodes.Status404NotFound,
                 Title = "Product not found",
                 Detail = $"No product found with id '{id}'.",
                 Instance = HttpContext.Request.Path
-            };
-
-            return NotFound(problem);
+            });
         }
 
-        return Ok(product);
+        return Ok(MapToResponse(product));
     }
 
+    /// <summary>
+    /// Create a new product.
+    /// </summary>
+    /// <param name="request">The product creation request.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The created product.</returns>
     [HttpPost]
     [Consumes("application/json")]
     [ProducesResponseType(typeof(ProductResponse), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status409Conflict)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status422UnprocessableEntity)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<ProductResponse>> CreateProduct(
         [FromBody] CreateProductRequest request,
         CancellationToken cancellationToken)
     {
-        var skuAlreadyExists = false; // TODO: verifica reale tramite servizio/domain
-
-        if (skuAlreadyExists)
+        var command = new CreateProductCommand
         {
-            var conflict = new ProblemDetails
-            {
-                Status = StatusCodes.Status409Conflict,
-                Title = "Product SKU already exists",
-                Detail = $"A product with SKU '{request.Sku}' already exists.",
-                Instance = HttpContext.Request.Path
-            };
-
-            return Conflict(conflict);
-        }
-
-        var created = new ProductResponse
-        {
-            Id = Guid.NewGuid(),
             Sku = request.Sku,
             Name = request.Name,
             Description = request.Description,
             Price = request.Price,
-            IsActive = true
+            Currency = request.Currency,
+            CategoryId = request.CategoryId
         };
+
+        var product = await _mediator.Send(command, cancellationToken);
 
         return CreatedAtAction(
             nameof(GetProductById),
-            new { id = created.Id, version = HttpContext.GetRequestedApiVersion()?.ToString() ?? "1.0" },
-            created);
+            new { id = product.Id, version = HttpContext.GetRequestedApiVersion()?.ToString() ?? "1.0" },
+            MapToResponse(product));
     }
-}
 
-public sealed class ProductResponse
-{
-    public Guid Id { get; set; }
-    public string Sku { get; set; } = default!;
-    public string Name { get; set; } = default!;
-    public string? Description { get; set; }
-    public decimal Price { get; set; }
-    public bool IsActive { get; set; }
-}
+    /// <summary>
+    /// Update an existing product.
+    /// </summary>
+    /// <param name="id">The product identifier.</param>
+    /// <param name="request">The product update request.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>The updated product.</returns>
+    [HttpPut("{id:guid}")]
+    [Consumes("application/json")]
+    [ProducesResponseType(typeof(ProductResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status422UnprocessableEntity)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult<ProductResponse>> UpdateProduct(
+        [FromRoute] Guid id,
+        [FromBody] UpdateProductRequest request,
+        CancellationToken cancellationToken)
+    {
+        var command = new UpdateProductCommand
+        {
+            Id = id,
+            Name = request.Name,
+            Description = request.Description,
+            Price = request.Price,
+            Currency = request.Currency,
+            CategoryId = request.CategoryId
+        };
 
-public sealed class CreateProductRequest
-{
-    public string Sku { get; set; } = default!;
-    public string Name { get; set; } = default!;
-    public string? Description { get; set; }
-    public decimal Price { get; set; }
+        var product = await _mediator.Send(command, cancellationToken);
+
+        return Ok(MapToResponse(product));
+    }
+
+    /// <summary>
+    /// Delete a product.
+    /// </summary>
+    /// <param name="id">The product identifier.</param>
+    /// <param name="cancellationToken">Cancellation token.</param>
+    /// <returns>No content on success.</returns>
+    [HttpDelete("{id:guid}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
+    public async Task<IActionResult> DeleteProduct(
+        [FromRoute] Guid id,
+        CancellationToken cancellationToken)
+    {
+        var command = new DeleteProductCommand { Id = id };
+        await _mediator.Send(command, cancellationToken);
+
+        return NoContent();
+    }
+
+    private static ProductResponse MapToResponse(ProductDto dto) => new()
+    {
+        Id = dto.Id,
+        Sku = dto.Sku,
+        Name = dto.Name,
+        Description = dto.Description,
+        Price = dto.PriceAmount,
+        Currency = dto.PriceCurrency,
+        Status = dto.Status.ToString(),
+        CategoryId = dto.CategoryId,
+        IsAvailable = dto.IsAvailable,
+        CreatedAt = dto.CreatedAt,
+        UpdatedAt = dto.UpdatedAt
+    };
 }
 
 internal static class HttpContextApiVersionExtensions

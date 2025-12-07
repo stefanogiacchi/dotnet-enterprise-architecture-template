@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31903.59
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11222.15 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcAI.Api", "ArcAI.Api\ArcAI.Api.csproj", "{D516AC3D-EEB6-4ADF-91DA-4B0AEC7F9173}"
 EndProject
@@ -11,13 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcAI.Domain", "ArcAI.Domai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcAI.Infrastructure", "ArcAI.Infrastructure\ArcAI.Infrastructure.csproj", "{BE89A21A-AD39-46E9-B5A6-49BD1C080781}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcAI.Shared", "ArcAI.Shared\ArcAI.Shared.csproj", "{30DCBE07-C04F-1454-D948-A19DC9F6F261}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{D516AC3D-EEB6-4ADF-91DA-4B0AEC7F9173}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -36,5 +35,12 @@ Global
 		{BE89A21A-AD39-46E9-B5A6-49BD1C080781}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE89A21A-AD39-46E9-B5A6-49BD1C080781}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE89A21A-AD39-46E9-B5A6-49BD1C080781}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30DCBE07-C04F-1454-D948-A19DC9F6F261}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30DCBE07-C04F-1454-D948-A19DC9F6F261}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30DCBE07-C04F-1454-D948-A19DC9F6F261}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30DCBE07-C04F-1454-D948-A19DC9F6F261}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
