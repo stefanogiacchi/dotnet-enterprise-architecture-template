@@ -1,6 +1,7 @@
 ﻿using ArcAI.Application.Common.Interfaces;
 using ArcAI.Application.Common.Models;
 using ArcAI.Application.DTOs;
+using ArcAI.Application.Extensions; 
 using ArcAI.Domain.Interfaces;
 
 namespace ArcAI.Application.Queries.Products.SearchProducts;
@@ -31,7 +32,7 @@ public sealed class SearchProductsQueryHandler : IQueryHandler<SearchProductsQue
             take: request.PageSize,
             cancellationToken: cancellationToken);
 
-        var dtos = items.ToDto();
+        var dtos = items.ToDtoList();
 
         return new PaginatedList<ProductDto>(
             dtos,

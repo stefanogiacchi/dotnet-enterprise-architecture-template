@@ -1,27 +1,16 @@
 ﻿namespace ArcAI.Domain.Common;
 
 /// <summary>
-/// Interface for entities that support audit tracking.
+/// Interface for entities that track audit information.
+/// Provides creation and modification timestamps with user tracking.
 /// </summary>
 public interface IAuditableEntity
 {
-    /// <summary>
-    /// Gets the date and time when the entity was created.
-    /// </summary>
-    DateTime CreatedAt { get; }
-
-    /// <summary>
-    /// Gets the identifier of the user who created the entity.
-    /// </summary>
-    string? CreatedBy { get; }
-
-    /// <summary>
-    /// Gets the date and time when the entity was last modified.
-    /// </summary>
-    DateTime? UpdatedAt { get; }
-
-    /// <summary>
-    /// Gets the identifier of the user who last modified the entity.
-    /// </summary>
-    string? UpdatedBy { get; }
+    public DateTime CreatedAt { get; set; }
+    public string? CreatedBy { get; set; }
+    public DateTime? UpdatedAt { get; set; }
+    public string? UpdatedBy
+    {
+        get; set;
+    }
 }

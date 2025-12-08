@@ -1,5 +1,4 @@
 ﻿using FluentValidation.Results;
-using Microsoft.IdentityModel.Tokens;
 
 namespace ArcAI.Application.Common.Exceptions;
 
@@ -29,6 +28,9 @@ public class ValidationException : Exception
     public ValidationException(IEnumerable<ValidationFailure> failures)
         : this()
     {
+        if (failures == null)
+            throw new ArgumentNullException(nameof(failures));
+
         Errors = failures
             .GroupBy(e => e.PropertyName, e => e.ErrorMessage)
             .ToDictionary(
@@ -44,6 +46,12 @@ public class ValidationException : Exception
     public ValidationException(string propertyName, string errorMessage)
         : this()
     {
+        if (string.IsNullOrWhiteSpace(propertyName))
+            throw new ArgumentNullException(nameof(propertyName));
+
+        if (string.IsNullOrWhiteSpace(errorMessage))
+            throw new ArgumentNullException(nameof(errorMessage));
+
         Errors = new Dictionary<string, string[]>
         {
             { propertyName, new[] { errorMessage } }

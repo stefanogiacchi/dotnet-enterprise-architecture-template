@@ -1,6 +1,13 @@
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Domain\obj\Debug\net8.0\ArcAI.Domain.csproj.AssemblyReference.cache
 D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Domain\obj\Debug\net8.0\ArcAI.Domain.GeneratedMSBuildEditorConfig.editorconfig
 D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Domain\obj\Debug\net8.0\ArcAI.Domain.AssemblyInfoInputs.cache
 D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Domain\obj\Debug\net8.0\ArcAI.Domain.AssemblyInfo.cs
 D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Domain\obj\Debug\net8.0\ArcAI.Domain.csproj.CoreCompileInputs.cache
 D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Domain\obj\Debug\net8.0\ArcAI.Domain.sourcelink.json
-D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Domain\obj\Debug\net8.0\ArcAI.Domain.csproj.AssemblyReference.cache
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Domain\bin\Debug\net8.0\ArcAI.Domain.deps.json
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Domain\bin\Debug\net8.0\ArcAI.Domain.dll
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Domain\bin\Debug\net8.0\ArcAI.Domain.pdb
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Domain\obj\Debug\net8.0\ArcAI.Domain.dll
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Domain\obj\Debug\net8.0\refint\ArcAI.Domain.dll
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Domain\obj\Debug\net8.0\ArcAI.Domain.pdb
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Domain\obj\Debug\net8.0\ref\ArcAI.Domain.dll

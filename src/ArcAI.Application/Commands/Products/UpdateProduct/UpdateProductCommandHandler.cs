@@ -1,5 +1,6 @@
 ﻿using ArcAI.Application.Common.Interfaces;
 using ArcAI.Application.DTOs;
+using ArcAI.Application.Extensions;  // ✅ ADD THIS LINE
 using ArcAI.Domain.Entities;
 using ArcAI.Domain.Exceptions;
 using ArcAI.Domain.Interfaces;
@@ -30,7 +31,6 @@ public sealed class UpdateProductCommandHandler : ICommandHandler<UpdateProductC
     {
         // Get existing product
         var product = await _productRepository.GetByIdAsync(request.Id, cancellationToken);
-
         if (product is null)
         {
             throw NotFoundException.For<Product>(request.Id);

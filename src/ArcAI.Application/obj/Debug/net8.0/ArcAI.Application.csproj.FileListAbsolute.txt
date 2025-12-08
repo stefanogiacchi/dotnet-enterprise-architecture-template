@@ -4,3 +4,13 @@ D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Application\obj\Debug\n
 D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Application\obj\Debug\net8.0\ArcAI.Application.AssemblyInfo.cs
 D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Application\obj\Debug\net8.0\ArcAI.Application.csproj.CoreCompileInputs.cache
 D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Application\obj\Debug\net8.0\ArcAI.Application.sourcelink.json
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Application\bin\Debug\net8.0\ArcAI.Application.deps.json
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Application\bin\Debug\net8.0\ArcAI.Application.dll
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Application\bin\Debug\net8.0\ArcAI.Application.pdb
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Application\bin\Debug\net8.0\ArcAI.Domain.dll
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Application\bin\Debug\net8.0\ArcAI.Domain.pdb
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Application\obj\Debug\net8.0\ArcAI.Ap.541185C5.Up2Date
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Application\obj\Debug\net8.0\ArcAI.Application.dll
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Application\obj\Debug\net8.0\refint\ArcAI.Application.dll
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Application\obj\Debug\net8.0\ArcAI.Application.pdb
+D:\src\dotnet-enterprise-architecture-template\src\ArcAI.Application\obj\Debug\net8.0\ref\ArcAI.Application.dll

@@ -1,5 +1,6 @@
-using ArcAI.Application.Common.Interfaces;
+﻿using ArcAI.Application.Common.Interfaces;
 using ArcAI.Application.DTOs;
+using ArcAI.Application.Extensions;  
 using ArcAI.Domain.Entities;
 using ArcAI.Domain.Exceptions;
 using ArcAI.Domain.Interfaces;
@@ -51,7 +52,7 @@ public sealed class CreateProductCommandHandler : ICommandHandler<CreateProductC
         await _productRepository.AddAsync(product, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-        // Return DTO
+        // Return DTO (ToDto is now available via using ArcAI.Application.Extensions)
         return product.ToDto();
     }
 }

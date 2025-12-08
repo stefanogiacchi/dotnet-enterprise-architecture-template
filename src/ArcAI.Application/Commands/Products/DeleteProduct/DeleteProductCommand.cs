@@ -1,5 +1,4 @@
 ﻿using ArcAI.Application.Common.Interfaces;
-using System.Windows.Input;
 
 namespace ArcAI.Application.Commands.Products.DeleteProduct;
 

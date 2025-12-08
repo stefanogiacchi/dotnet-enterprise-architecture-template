@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ArcAI.Domain.ValueObjects
+namespace ArcAI.Infrastructure.Persistence
 {
-    internal class FileName
+    internal class BaseRepository
     {
     }
 }

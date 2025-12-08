@@ -42,26 +42,10 @@ public sealed class Product : AggregateRoot<Guid>, IAuditableEntity
     /// </summary>
     public Guid? CategoryId { get; private set; }
 
-    /// <summary>
-    /// Gets the creation timestamp.
-    /// </summary>
-    public DateTime CreatedAt { get; private set; }
-
-    /// <summary>
-    /// Gets the creator identifier.
-    /// </summary>
-    public string? CreatedBy { get; private set; }
-
-    /// <summary>
-    /// Gets the last update timestamp.
-    /// </summary>
-    public DateTime? UpdatedAt { get; private set; }
-
-    /// <summary>
-    /// Gets the last updater identifier.
-    /// </summary>
-    public string? UpdatedBy { get; private set; }
-
+    public DateTime CreatedAt { get; set; }
+    public string? CreatedBy { get; set; }
+    public DateTime? UpdatedAt { get; set; }
+    public string? UpdatedBy { get; set; }
     /// <summary>
     /// Maximum length for product name.
     /// </summary>

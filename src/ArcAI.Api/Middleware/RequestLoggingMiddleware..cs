@@ -1,6 +1,15 @@
-﻿namespace ArcAI.Api.Middleware
+﻿/*
+3. Completare RequestLoggingMiddleware
+   - Request/response logging
+   - Performance timing
+   - Sensitive data masking
+ */
+
+
+
+namespace ArcAI.Api.Middleware
 {
-    public class FileName
+    public class RequestLoggingMiddleware
     {
     }
 }

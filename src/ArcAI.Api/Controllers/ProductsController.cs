@@ -198,17 +198,18 @@ public class ProductsController : ControllerBase
         return NoContent();
     }
 
+     
     private static ProductResponse MapToResponse(ProductDto dto) => new()
     {
         Id = dto.Id,
         Sku = dto.Sku,
         Name = dto.Name,
         Description = dto.Description,
-        Price = dto.PriceAmount,
-        Currency = dto.PriceCurrency,
-        Status = dto.Status.ToString(),
+        Price = dto.Price,                           
+        Currency = dto.Currency,                      
+        Status = dto.Status,                          
         CategoryId = dto.CategoryId,
-        IsAvailable = dto.IsAvailable,
+        IsAvailable = dto.Status == "Published",    
         CreatedAt = dto.CreatedAt,
         UpdatedAt = dto.UpdatedAt
     };

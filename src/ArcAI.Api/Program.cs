@@ -1,6 +1,7 @@
 using ArcAI.Api.Middleware;
 using ArcAI.Application;
 using ArcAI.Infrastructure;
+using ArcAI.Infrastructure.Logging;
 using Asp.Versioning;
 using Microsoft.OpenApi.Models;
 using Serilog;
@@ -10,7 +11,7 @@ Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
     .Enrich.FromLogContext()
     .CreateBootstrapLogger();
-
+SerilogConfiguration.CreateBootstrapLogger();
 try
 {
     Log.Information("Starting ArcAI.Api...");
@@ -106,7 +107,8 @@ try
         app.UseSwaggerUI(options =>
         {
             options.SwaggerEndpoint("/swagger/v1/swagger.json", "ArcAI API v1");
-            options.RoutePrefix = string.Empty; // Swagger at root
+
+  
         });
     }
 
