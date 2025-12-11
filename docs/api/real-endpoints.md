@@ -1,1 +1,0 @@
-→ documenta gli endpoint reali del template (anche se pochi)
