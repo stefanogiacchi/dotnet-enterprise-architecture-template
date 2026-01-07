@@ -1,13 +1,15 @@
 # ArcAI Framework — .NET Enterprise Architecture Template (AI-Ready)
 
 
-### *Created and maintained by **Stefano Giacchi** — Cloud Architect & Enterprise Architect (track)*
+### *Created and maintained by Stefano Giacchi — Senior Cloud & Solution Architect*
 
 ---
 
 ##   Overview
 
-This project is a **modern, enterprise-grade template** for building scalable, modular, cloud-native, AI-ready applications using **.NET 8**, leveraging:
+This repository is intentionally iterative and evolves over time to explore architectural patterns, governance practices, and design trade-offs.
+
+This project has attracted interest from architects, engineers, and AI practitioners, reflecting a growing focus on enterprise-ready and AI-first architectural approaches.
 
 * Clean Architecture principles
 * C4 modelling
@@ -33,9 +35,10 @@ The goal of this template is simple:
 
 > **Give teams and architects a strong, opinionated foundation to build enterprise-grade applications that are scalable, maintainable, AI-ready and cloud-native from day one.**
 
-This project captures over **20 years of experience** across cloud architecture, enterprise software engineering, and large-scale distributed systems.
+This project reflects experience accumulated across enterprise software engineering,
+cloud architecture, and large-scale distributed systems, and the evolution from
+“software that scales” to **“software that reasons.”**
 
-It reflects the evolution from “software that scales” to **“software that reasons.”**
 
 ---
 
@@ -47,8 +50,7 @@ A modular, decoupled structure aligned with modern architectural principles.
 
 ### AI Integration Layer
 
-Plug-and-play support for:
-
+Composable support for:
 * Azure OpenAI
 * Prompt Orchestration
 * Semantic Search
@@ -105,6 +107,8 @@ Vertical slices, handlers, pipelines, validators, repositories.
 
 ##   AI-First Architecture
 
+AI capabilities are included as architectural building blocks, not as productized or prescriptive implementations.
+
 This template includes an **AI Integration Layer** designed to support:
 
 * Hybrid reasoning (rules + LLMs)
@@ -146,16 +150,7 @@ This template is ideal for:
 * Event-driven architectures
 * Modular cloud-native platforms
 
----
-
-##   Global Recognition
-
-This project has already attracted attention from
-**architects, engineers and AI practitioners across Europe and North America**,
-thanks to its clear structure and enterprise-oriented design.
-
-Its AI-first approach and architectural consistency make it a valuable reference for teams working on modern cloud-native applications.
-
+ 
 ---
 ## ArcAI Framework — Solution Layout
 
@@ -168,14 +163,15 @@ Its AI-first approach and architectural consistency make it a valuable reference
 ## About the Author
 
 **Stefano Giacchi**
-Cloud Architect • Enterprise Architect Track • AI-Driven Engineer
+Senior Cloud & Solution Architect • AI-Driven Systems
 
 Architecting large-scale distributed systems for over 20 years, with a focus on
 **cloud-native platforms, enterprise integration patterns, AI-first architectures, and modern application design**.
 
 Experienced across **Energy, Manufacturing, Finance, and Public Sector**, with a consistent track record of transforming complex requirements into scalable, maintainable and future-proof solutions.
 
-Creator of advanced architectural accelerators and knowledge frameworks adopted by teams and practitioners across different countries.
+Contributor to architectural accelerators and knowledge frameworks, used as reference material by practitioners in different contexts.
+
 
 Passionate about **AI governance, semantic architectures, intelligent APIs, and the evolution of enterprise software in the age of LLMs**.
 
